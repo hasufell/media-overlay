@@ -14,5 +14,5 @@ Media ebuilds.
 With paludis: see [Paludis repository configuration](http://paludis.exherbo.org/configuration/repositories/index.html)
 
 With layman:
-```layman -f -o https://raw.github.com/hasufell/media-overlay/master/repository.xml -a desktop-overlay```
+```layman -f -o https://raw.github.com/hasufell/media-overlay/master/repository.xml -a media-overlay```
 
