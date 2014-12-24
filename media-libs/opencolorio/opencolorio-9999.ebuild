@@ -45,7 +45,7 @@ RESTRICT="test"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-1.0.8-documentation-gen.patch"
-	"${FILESDIR}/${P}-remove-external-doc-utilities.patch"	
+	"${FILESDIR}/${P}-remove-external-doc-utilities.patch"
 )
 
 pkg_setup() {
