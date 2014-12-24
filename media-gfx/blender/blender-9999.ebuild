@@ -67,7 +67,7 @@ RDEPEND="
 	x11-libs/libXxf86vm
 	boost? ( >=dev-libs/boost-1.44[nls?,threads(+)] )
 	collada? ( media-libs/opencollada )
-	colorio? ( <=media-libs/opencolorio-1.0.9 )
+	colorio? ( media-libs/opencolorio )
 	cycles? (
 		media-libs/openimageio
 	)
