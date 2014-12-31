@@ -29,7 +29,6 @@
 EAPI=5
 PYTHON_COMPAT=( python3_4 )
 
-EGIT_CLONE_TYPE="shallow"
 EGIT_REPO_URI="git://git.blender.org/blender.git"
 
 inherit multilib fdo-mime gnome2-utils cmake-utils eutils python-single-r1 versionator flag-o-matic toolchain-funcs pax-utils check-reqs git-r3
