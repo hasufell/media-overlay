@@ -39,7 +39,7 @@ HOMEPAGE="http://www.blender.org"
 SLOT="0"
 LICENSE="|| ( GPL-2 BL )"
 KEYWORDS=""
-IUSE="+boost +bullet collada colorio cycles +dds debug +elbeem ffmpeg fftw +game-engine jack jpeg2k ndof nls openal openimageio +opennl openmp +openexr player redcode sdl sndfile sse sse2 tiff"
+IUSE="+boost +bullet collada colorio cycles +dds debug +elbeem ffmpeg fftw +game-engine jack jpeg2k libav ndof nls openal openimageio +opennl openmp +openexr player redcode sdl sndfile cpu_flags_x86_sse cpu_flags_x86_sse2 tiff"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}
 	player? ( game-engine )
 	redcode? ( jpeg2k ffmpeg )
@@ -71,10 +71,8 @@ RDEPEND="
 		media-libs/openimageio
 	)
 	ffmpeg? (
-		|| (
-			>=media-video/ffmpeg-2.1.4:0[x264,mp3,encode,theora,jpeg2k?]
-			>=media-video/libav-9[x264,mp3,encode,theora,jpeg2k?]
-		)
+		!libav? ( >=media-video/ffmpeg-2.1.4:0=[x264,mp3,encode,theora,jpeg2k?] )
+		libav? ( >=media-video/libav-9:0=[x264,mp3,encode,theora,jpeg2k?] )
 	)
 	fftw? ( sci-libs/fftw:3.0 )
 	jack? ( media-sound/jack-audio-connection-kit )
@@ -143,8 +141,8 @@ src_configure() {
 		$(cmake-utils_use_with redcode IMAGE_REDCODE)
 		$(cmake-utils_use_with sdl SDL)
 		$(cmake-utils_use_with sndfile CODEC_SNDFILE)
-		$(cmake-utils_use_with sse RAYOPTIMIZATION)
-		$(cmake-utils_use_with sse2 SSE2)
+		$(cmake-utils_use_with cpu_flags_x86_sse RAYOPTIMIZATION)
+		$(cmake-utils_use_with cpu_flags_x86_sse2 SSE2)
 		$(cmake-utils_use_with bullet BULLET)
 		$(cmake-utils_use_with tiff IMAGE_TIFF)
 		$(cmake-utils_use_with colorio OPENCOLORIO)
