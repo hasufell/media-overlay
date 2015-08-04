@@ -1,0 +1,32 @@
+--- lib/libOSSlib/Makefile
++++ lib/libOSSlib/Makefile
+@@ -1,7 +1,7 @@
+ OBJS=libmain.o midiparser.o play_event.o
+ INSTALLLIB=/lib
+-LDFLAGS=-shared -fPIC
+-CFLAGS=-O -fPIC
++LDFLAGS += -shared -fPIC
++CFLAGS += -O -fPIC
+ #LDFLAGS=-Bdynamic
+ AROPTS=rc
+ AR=ar
+@@ -17,7 +17,7 @@
+ 	cp libOSSlib.a $(INSTALLLIB)
+ 
+ libOSSlib.so:	$(OBJS)
+-	${CC} $(LDFLAGS) -o libOSSlib.so $(OBJS)
++	${CC} $(CFLAGS) $(LDFLAGS) -o libOSSlib.so $(OBJS)
+ 
+ dep:
+ 
+--- lib/libsalsa/Makefile
++++ lib/libsalsa/Makefile
+@@ -2,7 +2,7 @@
+ 
+ OSSLIBDIR=/usr/lib/oss
+ 
+-CFLAGS=-O -I../../include -I../libOSSlib
++CFLAGS += -O -I../../include -I../libOSSlib
+ LIBTOOL=libtool --tag=CC
+ 
+ all: libsalsa.la
