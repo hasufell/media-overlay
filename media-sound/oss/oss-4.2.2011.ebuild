@@ -13,7 +13,7 @@ SRC_URI="http://www.4front-tech.com/developer/sources/stable/gpl/${MY_P}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="gtk salsa vmix-float"
 
 RDEPEND="gtk? ( x11-libs/gtk+:2 )"
