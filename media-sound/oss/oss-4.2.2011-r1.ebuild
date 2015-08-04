@@ -99,6 +99,8 @@ EOF
 	dobin bin/*
 	dolib lib/*
 
+	dosbin "${S}"/setup/Linux/sbin/*
+
 	dodir /var/lib/oss4
 
 	newinitd "${FILESDIR}"/${PN}.init ${PN}
