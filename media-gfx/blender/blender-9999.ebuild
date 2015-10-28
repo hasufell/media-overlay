@@ -39,7 +39,7 @@ HOMEPAGE="http://www.blender.org"
 SLOT="0"
 LICENSE="|| ( GPL-2 BL )"
 KEYWORDS=""
-IUSE="+boost +bullet collada colorio cycles +dds debug +elbeem ffmpeg fftw +game-engine jack jpeg2k libav ndof nls openal openimageio +opennl openmp +openexr player redcode sdl sndfile cpu_flags_x86_sse cpu_flags_x86_sse2 tiff"
+IUSE="+boost +bullet c++0x collada colorio cycles +dds debug +elbeem ffmpeg fftw +game-engine jack jpeg2k libav ndof nls openal openimageio +opennl openmp +openexr player redcode sdl sndfile cpu_flags_x86_sse cpu_flags_x86_sse2 tiff"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}
 	player? ( game-engine )
 	redcode? ( jpeg2k ffmpeg )
